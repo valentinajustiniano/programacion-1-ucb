@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Responsiva</title>
+  <link rel="stylesheet" href="estilos.css"> <!-- Puedes mover el CSS aquí si lo separas -->
+  <style>
+    :root {
+      --color-primario: #FCD025;
+      --color-secundario: #11446D;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--color-secundario);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    button {
+      background-color: var(--color-primario);
+      border: none;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+
+    footer {
+      background-color: var(--color-secundario);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      header, footer {
+        padding: 1rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mi Proyecto Web</h1>
+    <p>Integrando funciones con JavaScript</p>
+  </header>
+
+  <main>
+    <h2>Bienvenido</h2>
+    <p>Haz clic en el botón para ejecutar tu primer algoritmo:</p>
+    <button onclick="mi_primer_algoritmo()">Ejecutar Algoritmo</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Mi Sitio Web. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Archivo externo con tus funciones -->
+  <script src="aprendiendo.js"></script>
+
+  <!-- Función de prueba local en caso que aún no hayas creado el archivo -->
+  <script>
+    function mi_primer_algoritmo() {
+      alert("¡Hola! Esta es tu primera función ejecutada con JavaScript.");
+    }
+  </script>
+</body>
+</html>
