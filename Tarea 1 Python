@@ -1,0 +1,91 @@
+#1.Convertir un numero decimal a binario, octal y hexadecimal
+decimal= int(input("Ingresar tu numero decimal:"))
+binario=bin(decimal) #esta funcion solo sirve de un decimal a otro sistema
+octal=oct(decimal)
+hexadecimal=hex(decimal)
+
+print=(f"Binario:{binario [2:]}")
+print=(f"Octal:{octal [2:]}")
+print=(f"Hexadecimal: {hexadecimal [2:]}")
+
+#2.Sumar dos numeros en binario y mostrar el resultado en decimal 
+def sumabinarios (binario1, binario2):
+    decimal1 =int(binario1, 2)
+    decimal2 =int(binario2, 2)
+    suma = decimal1 + decimal2 
+    return suma
+
+binario1 =input("Ingresa tu primer numero en binario:")
+binario2 =input("Ingresa tu seguno numero en binario:")
+
+resultado = sumabinarios(binario1, binario2)
+print = (f"El resultado de tu suma en decimal es: {resultado}")
+
+#3.Convertir un numero hexadecimal a binario y viceversa
+hexadecimal =input("Ingresa tu numero hexadecimal:")
+decimal = int(hexadecimal, 16)
+binario = bin(decimal)
+
+print (f"Tu numero en binario es:{binario [2:] }")
+
+#3.1 Convertir un numero binario a hexadecimal 
+binario = input("Ingresa tu numero binario:")
+decimal = int(binario, 2)
+hexadecimal = hex(decimal)
+
+print (f"Tu numero en hexadecimal:{hexadecimal [2:] }")
+
+#4.Realizar operaciones aritmeticas basicas suma, resta, multiplicacion, division con su resultado en binario 
+binario1 = input("Ingresar tu numero 1 en binario:")
+binario2 = input("Ingresar tu numero 2 en binario:")
+
+decimal1 = int(binario, 2)
+decimal2 = int(binario, 2)
+
+suma = decimal1 + decimal2
+resta = decimal1 - decimal2
+multiplicacion = decimal1 * decimal2
+division = decimal1 // decimal2
+
+#convertir los resultados de nuevo a binario
+suma_binario = bin(suma)[2:]
+resta_binario = bin(resta)[2:]
+mult_binario = bin(multiplicacion)[2:]
+div_binario = bin(division)[2:]
+
+#mostrar resultados 
+print(f"Resultado suma:{suma_binario}")
+print(f"Resultado resta:{resta_binario}")
+print(f"Resultado multiplicacion:{mult_binario}")
+print(f"Resultado division:{div_binario}")
+
+#5.Implementar una tabla de multiplicar usando while 
+valor = int(input("Ingresa tu numero para la tabla de multiplicar:"))
+while i <= 10:
+    print(f"{valor} * {i} = {numero * i}")
+    i += 1
+
+#6. Suma de numeros pares del 1 al 50
+suma = 0
+for numero in range (1, 51):
+    if num % 2 == 0
+       suma += numero
+
+print(f"La suma de los numeros pares entre 1 y 5o es de: {suma}")
+
+#7. Suma de numeros primos entre 1 y 100
+def num_primo(n):
+    if n < 2:
+        return False 
+    for i in range(2, int(n**0.5) +1):
+        if n % i == 0:
+            return False 
+    return True 
+
+suma_primos = 0
+
+for num in range(1,101):
+    if num_primo(num):
+        suma_primos += num
+
+print(f" La suma de todos los numeros primos hasta en 100 es de: {suma_primos}")   
