@@ -12,6 +12,7 @@
       --color-primario: #FCD025;
       --color-secundario: #11446D;
       --color-texto: #ffffff;
+      --color-azul: #06486D
     }
 
     body {
@@ -29,7 +30,7 @@
     }
 
     footer {
-      background-color: var(--color-secundario);
+      background-color: var(--color-azul);
       color: var(--color-texto);
       padding: 1rem 2rem;
       text-align: center;
@@ -73,17 +74,44 @@
 <body>
   <header>
     <h1>Bienvenido a Mi Proyecto</h1>
-    <p>Explorando algoritmos con estilo</p>
+    <p>Valentina Justiniano Grimaldos </p>
   </header>
 
   <main>
     <h2>Interacción con JavaScript</h2>
     <p>Haz clic en el botón para ejecutar tu primer algoritmo:</p>
     <button onclick="mi_primer_algoritmo()">Ejecutar Algoritmo</button>
-  </main>
+  </main>  
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor Binario a Decimal</title>
+  <script>
+    function binarioDecimal(binario) {
+      // Aquí tu función para convertir binario a decimal
+      let decimal = parseInt(binario, 2);
+      alert("Decimal: " + decimal);
+    }
+
+    function manejarClick() {
+      const valorBinario = document.getElementById('inputBinario').value;
+      binarioDecimal(valorBinario);
+    }
+  </script>
+</head>
+<body>
+
+  <input type="text" id="inputBinario" placeholder="Introduce binario">
+  <button onclick="manejarClick()">Convertir a Decimal</button>
+
+</body>
+</html>
 
   <footer>
-    <p>&copy; 2025 Mi Proyecto de Algoritmos. Todos los derechos reservados.</p>
+    <p>&copy; Página creada con IA, aprendiendo JAVA SCRITPT 2025. </p>
   </footer>
+
 </body>
 </html>
