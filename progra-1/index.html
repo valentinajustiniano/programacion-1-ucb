@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Funciones</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <h1>Proyecto de Funciones</h1>
+  </div>
+  <nav>
+    <ul class="tabs">
+      <li><a href="#decimal">Decimal a Binario/Octal/Hex</a></li>
+      <li><a href="#sumabinarios">Suma Binarios</a></li>
+      <li><a href="#hexbin">Binario a Hexadecimal</a></li>
+      <li><a href="#operarbin">Operar Binarios</a></li>
+      <li><a href="#tabla">Tabla Multiplicar</a></li>
+      <li><a href="#pares">Suma Pares</a></li>
+      <li><a href="#primos">Suma Primos</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <!-- 1 -->
+    <section id="decimal" class="tab-content">
+      <h2>Convertir Decimal</h2>
+      <input type="number" id="numDecimal" placeholder="Ingrese un número decimal">
+      <button onclick="convertirDecimalBtn()">Convertir</button>
+      <div id="resultadoDecimal"></div>
+    </section>
+
+    <!-- 2 -->
+    <section id="sumabinarios" class="tab-content">
+      <h2>Suma de Binarios</h2>
+      <input type="text" id="bin1" placeholder="Primer binario">
+      <input type="text" id="bin2" placeholder="Segundo binario">
+      <button onclick="sumarBinariosBtn()">Sumar</button>
+      <div id="resultadoSumaBin"></div>
+    </section>
+
+    <!-- 3 -->
+    <section id="hexbin" class="tab-content">
+      <h2>Hexadecimal ↔ Binario</h2>
+      <input type="text" id="hexInput" placeholder="Hexadecimal">
+      <button onclick="hexABinarioBtn()">Hex → Binario</button>
+      <input type="text" id="binInput" placeholder="Binario">
+      <button onclick="binarioAHexBtn()">Binario → Hex</button>
+      <div id="resultadoHexBin"></div>
+    </section>
+
+    <!-- 4 -->
+    <section id="operarbin" class="tab-content">
+      <h2>Operaciones con Binarios</h2>
+      <input type="text" id="binOp1" placeholder="Primer binario">
+      <input type="text" id="binOp2" placeholder="Segundo binario">
+      <select id="operacion">
+        <option value="suma">Suma</option>
+        <option value="resta">Resta</option>
+        <option value="multiplicacion">Multiplicación</option>
+        <option value="division">División</option>
+      </select>
+      <button onclick="operarBinariosBtn()">Operar</button>
+      <div id="resultadoOperar"></div>
+    </section>
+
+    <!-- 5 -->
+    <section id="tabla" class="tab-content">
+      <h2>Tabla de Multiplicar</h2>
+      <input type="number" id="numTabla" placeholder="Número">
+      <button onclick="tablaMultiplicarBtn()">Mostrar</button>
+      <div id="resultadoTabla"></div>
+    </section>
+
+    <!-- 6 -->
+    <section id="pares" class="tab-content">
+      <h2>Suma Pares 1-50</h2>
+      <button onclick="sumaParesBtn()">Calcular</button>
+      <div id="resultadoPares"></div>
+    </section>
+
+    <!-- 7 -->
+    <section id="primos" class="tab-content">
+      <h2>Suma Primos 1-100</h2>
+      <button onclick="sumaPrimosBtn()">Calcular</button>
+      <div id="resultadoPrimos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Valentina Justiniano Grimaldos </p>
+  </footer>
+
+  <script src="funciones.js"></script>
+</body>
+</html>
+
+
