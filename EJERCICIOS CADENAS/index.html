@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Texto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="cadenas.js" defer></script>
+    <script defer>
+        function ejecutarFuncion(tipo) {
+            let texto = document.getElementById("entradaTexto").value;
+            let resultado = "";
+
+            if (tipo === "vocales") {
+                resultado = ContarVocales(texto);
+            } else if (tipo === "palabras") {
+                resultado = ContarPalabras(texto);
+            } else if (tipo === "caracteres") {
+                resultado = ContarCaracteres(texto);
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>✨ Analizador de Texto ✨</h1>
+        <p>Descubre cuántas vocales, palabras y caracteres tiene tu texto</p>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <input type="text" id="entradaTexto" placeholder="Escribe tu texto aquí...">
+
+            <div class="botones">
+                <button onclick="ejecutarFuncion('vocales')">Contar Vocales</button>
+                <button onclick="ejecutarFuncion('palabras')">Contar Palabras</button>
+                <button onclick="ejecutarFuncion('caracteres')">Contar Caracteres</button>
+            </div>
+
+            <div id="resultado" class="resultado">
+                 Aquí verás el resultado 
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>🌸 VALENTINA JUSTIANO GRIMALDOS 🌸</p>
+    </footer>
+</body>
+</html>
+
+
+
+
