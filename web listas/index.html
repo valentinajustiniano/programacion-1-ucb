@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Listas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Generador de listas</h1>
+    <p>✨ Agrega y elimina valores con nuestro código ✨</p>
+  </header>
+
+  <main>
+    <!-- FORMULARIO -->
+    <section class="card">
+      <h2>💡 Ingresa tu nombre</h2>
+      <div class="formulario">
+        <input type="text" id="nombre" placeholder="Escribe tu nombre...">
+        <button onclick="mostrarNombre()">Mostrar</button>
+      </div>
+      <p id="resultado"></p>
+    </section>
+
+    <!-- LISTA -->
+    <section class="card">
+      <h2>🎲 Generar Números Aleatorios</h2>
+      <button class="btn-principal" onclick="InsertarLista()">Agregar Número</button>
+
+      <div class="formulario">
+        <input type="number" id="valorEliminar" placeholder="Número a eliminar...">
+        <button onclick="EliminarLista()">Eliminar</button>
+      </div>
+
+      <div id="lista-contenedor" class="contenedor-lista"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con ❤️ </p>
+  </footer>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+  <div class="blob-rosa"></div>
+
+</body>
+</html>
