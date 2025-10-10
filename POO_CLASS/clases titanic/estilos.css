@@ -1,0 +1,54 @@
+/* Fondo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #cbe8ff, #f3f9ff);
+    color: #03396c;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    color: #00264d;
+    margin-bottom: 30px;
+}
+
+/* Botón */
+button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #004c99;
+}
+
+/* Resultado */
+#resultado {
+    background-color: #ffffff;
+    border: 2px solid #005b99;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+    width: 80%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    white-space: pre-wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Emojis y detalles */
+pre::before {
+    content: "📜 Resultados:\A";
+    font-weight: bold;
+    color: #004c99;
+}
