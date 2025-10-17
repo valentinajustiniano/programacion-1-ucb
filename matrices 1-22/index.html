@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizador de Matriz</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <h2>Operaciones</h2>
+      <button id="fillBtn">Llenar Aleatorio</button>
+      <button id="clearBtn">Limpiar</button>
+      <button id="incrementBtn">Incremento Filas</button>
+
+      <h2>Ejercicios</h2>
+      <button id="squareBtn">Cuadrado Relleno</button>
+      <button id="frameBtn">Marco Interno</button>
+      <button id="crossBtn">Cruces</button>
+      <button id="borderDiagBtn">Bordes y Diagonales</button>
+      <button id="flagBtn">Bandera</button>
+      <button id="alternateBtn">Relleno Alterno</button>
+      <button id="zigzagBtn">Zig-Zag Horizontal</button>
+      <button id="spiralBtn">Relleno en Espiral</button>
+      <button id="upperLeftBtn">Triángulo Superior Izquierdo</button>
+      <button id="lowerRightBtn">Triángulo Inferior Derecho</button>
+      <button id="gridBtn">Cuadrícula</button>
+      <button id="triangleBtn">Triángulo Central</button>
+      <button id="rhombusBtn">Rombos Concéntricos</button>
+      <button id="crossesBtn">Cruces Concéntricas</button>
+      <button id="diagFlagBtn">Bandera Diagonal</button>
+      <button id="squareInsideBtn">Cuadrado dentro de Cuadrado</button>
+      <button id="bordersCenterBtn">Bordes y Centro</button>
+      <button id="parallelLinesBtn">Líneas Paralelas</button>
+      <button id="crossMarksBtn">Marcas de Cruz</button>
+      <button id="cornerDiamondsBtn">Rombo en Esquinas</button>
+      <button id="chessBtn">Relleno de Ajedrez</button>
+      <button id="hourglassBtn">Reloj de Arena</button>
+      <button disabled>Transponer</button>
+      <button disabled>Sumar</button>
+      <button disabled>Multiplicar</button>
+    </aside>
+
+    <!-- Área principal del canvas -->
+    <main class="canvas-area">
+      <div class="canvas-wrapper">
+        <canvas id="matrixCanvas"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <!-- Archivos JavaScript -->
+  <script src="matrix.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
