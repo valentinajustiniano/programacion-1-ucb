@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualizador de Matriz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Operaciones</h2>
+      <button id="fillBtn">Llenar Aleatorio</button>
+      <button id="manualBtn">Editar matriz manualmente</button>
+      <button id="clearBtn">Limpiar</button>
+
+      <button id="rotar90DerBtn">Rotar 90° Derecha</button>  
+      <button id="sumarBtn">Mostrar suma total</button> 
+      <button id="duplicadasBtn">Detectar Filas Duplicadas</button>
+      <button id="multiplicarEscalarBtn">Multiplicar por escalar</button>
+
+      
+      <button disabled>Transponer</button>
+      <button disabled>Sumar</button>
+      <button disabled>Multiplicar</button>
+    </aside>
+    <main class="canvas-area">
+  <div class="canvas-wrapper">
+    <canvas id="matrixCanvas"></canvas>
+  </div>
+  <!-- Contenedor para la edición manual -->
+  <div id="matrizContainer" style="margin-top: 20px;"></div>
+</main>
+
+  <script src="matrix.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
