@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Inicio - Snake</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #70B450; /* verde principal */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Trebuchet MS", sans-serif;
+        }
+
+        .container {
+            background: #008000; /* verde medio */
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: white;
+            font-size: 60px;
+            margin-bottom: 10px;
+            font-weight: 900;
+            text-shadow: 3px 3px #004716;
+        }
+
+        label {
+            color: white;
+            font-size: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+        }
+
+        .datetime {
+            margin-top: 20px;
+            color: #d6ffd6;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #004716;
+            border: none;
+            color: white;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #003710;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>SNAKE</h1>
+
+    <label for="username">Ingresa tu nombre:</label><br>
+    <input type="text" id="username" placeholder="Tu nombre...">
+
+    <div class="datetime" id="datetime"></div>
+
+    <button onclick="startGame()">Comenzar</button>
+</div>
+
+<script>
+    // Mostrar fecha y hora en tiempo real
+    function updateDateTime() {
+        const now = new Date();
+        document.getElementById("datetime").innerText =
+            now.toLocaleString("es-BO");
+    }
+    setInterval(updateDateTime, 1000);
+
+    // Ir al nivel 1
+    function startGame() {
+        const user = document.getElementById("username").value.trim();
+
+        if (user === "") {
+            alert("Por favor ingresa tu nombre antes de continuar.");
+            return;
+        }
+
+        // Guardamos el nombre para usar en tu juego si quieres después
+        localStorage.setItem("username", user);
+
+        // Redirigir a tu juego actual (index.html o el que inicie el nivel 1)
+        window.location.href = "game.html";
+    }
+
+    updateDateTime();
+</script>
+
+</body>
+</html>
