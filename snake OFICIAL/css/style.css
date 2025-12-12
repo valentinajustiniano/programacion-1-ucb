@@ -18,8 +18,8 @@ body {
 
 canvas {
   /* Ajusta el tamaño máximo al contenedor */
-  max-width: 60%;
-  max-height: 50%;
+  max-width: 90%;
+  max-height: 80%;
 
   /* Mantén la proporción original */
   width: auto;

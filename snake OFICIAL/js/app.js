@@ -1,8 +1,8 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 2000;
-canvas.height = 1200;
+canvas.width = 1000;
+canvas.height = 600;
 
 const images = {};
 let playerName = "";
@@ -37,12 +37,23 @@ function isLevelUnlocked(level) {
     return nivelesDesbloqueados[level];
 }
 
-// Llamado por SnakeGame cuando cumple las condiciones
 function unlockNextLevelButton(nextLevel) {
+    // Soporte para nivel 1.5
+    if (nextLevel === 1.5) {
+        nivelesDesbloqueados[1.5] = true;
+
+        // Activar el botón del nivel 1.5 si existe
+        const btn = document.getElementById("btnNivel1_5");
+        if (btn) {
+            btn.disabled = false;
+            btn.classList.remove("locked");
+        }
+        return;
+    }
+
+    // Desbloqueo normal (niveles 1, 2, 3)
     if (nextLevel <= 3) {
         nivelesDesbloqueados[nextLevel] = true;
-        // La actualización de botones ocurre automáticamente en game.cambiarNivel()
-        // o llamando a updateLevelButtons después del unlock.
     }
 }
 

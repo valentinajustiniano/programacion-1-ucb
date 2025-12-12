@@ -185,23 +185,29 @@ class SnakeGame {
 
     switch (this.nivelActual) {
       case 1:
-        this.manzanasRequeridas = 5;
+        this.manzanasRequeridas = 3;
         break;
+
+      case 1.5:
+        this.manzanasRequeridas = 3;
+        break;
+
       case 2:
-        this.manzanasRequeridas = 10;
+        this.manzanasRequeridas = 5;
         this.doradasRestantes = 2;
         break;
       case 3:
-        this.manzanasRequeridas = 15;
+        this.manzanasRequeridas = 5;
         this.multicolorRestantes = 3;
         break;
     }
   }
 
   ajustarVelocidad() {
-    if (this.nivelActual === 1) this.velocidad = 2000;
-    if (this.nivelActual === 2) this.velocidad = 1500;
-    if (this.nivelActual === 3) this.velocidad = 1000;
+    if (this.nivelActual === 1) this.velocidad = 300;
+    if (this.nivelActual === 1.5) this.velocidad = 300;
+    if (this.nivelActual === 2) this.velocidad = 300;
+    if (this.nivelActual === 3) this.velocidad = 300;
   }
 
   esObstaculo(valor) {
@@ -287,36 +293,31 @@ class SnakeGame {
       this.score += puntos;
       this.applesEatenInLevel += Math.floor(puntos / 10);
 
-      // sonido de comer
       this.playSound("eat");
-
       this.draw();
 
-      const objetivoScore = this.maxScorePorNivel[this.nivelActual - 1];
+      // Comprobar si completó el nivel
+      const nivelCompletado =
+        this.applesEatenInLevel >= this.manzanasRequeridas;
 
-      // ¿Completó el nivel?
-      if (
-        this.score >= objetivoScore &&
-        this.applesEatenInLevel >= this.manzanasRequeridas
-      ) {
+      if (nivelCompletado) {
         this.isPaused = true;
-
-        // sonido de nivel superado
         this.playSound("levelPassed");
 
         setTimeout(() => {
-          alert(
-            `¡Nivel ${this.nivelActual} completado! Puntuación: ${this.score}.`
-          );
+          alert(`¡Nivel ${this.nivelActual} completado! Puntuación: ${this.score}.`);
           this.playSound("accept");
-
           this.isPaused = false;
 
-          if (this.nivelActual < 3) {
-            unlockNextLevelButton(this.nivelActual + 1);
-            this.cambiarNivel(this.nivelActual + 1);
+          let siguiente;
+          if (this.nivelActual === 1) siguiente = 1.5;
+          else if (this.nivelActual === 1.5) siguiente = 3;
+          else siguiente = null; 
+
+          if (siguiente) {
+            unlockNextLevelButton(siguiente);
+            this.cambiarNivel(siguiente);
           } else {
-            // Juego completamente ganado
             this.playSound("youwon");
             alert("¡Juego completado!");
             this.playSound("accept");
@@ -324,18 +325,18 @@ class SnakeGame {
           }
         }, 100);
       } else {
-        // No completó nivel → nueva manzana
+        // Si no completó el nivel, generar nueva manzana
         this.apple = this.spawnApple();
       }
     } else {
       // --- 3. Movimiento normal (sin comer) ---
       this.player.move(newHead);
-      // Sonido de movimiento por cada paso
       this.playSound("move");
     }
 
     this.updateUI();
-  }
+}
+
 
   // Función para terminar el juego (Game Over / Victoria final)
   endGame(message = "¡Game Over!", isVictory = false) {
@@ -366,17 +367,27 @@ class SnakeGame {
 
   // Función para cambiar de nivel (llamado por el juego o la UI)
   cambiarNivel(nuevoNivel) {
-    // Verificar desbloqueo
+
+    //  Saltar el nivel 2 siempre
+    if (nuevoNivel === 2) {
+        alert("El nivel 2 se salta automáticamente. Enviando al nivel 3...");
+        this.playSound("accept");
+        nuevoNivel = 3;
+    }
+
+    // Verificar si está desbloqueado
     if (typeof isLevelUnlocked === "function" && !isLevelUnlocked(nuevoNivel)) {
       alert("Este nivel no está desbloqueado.");
       this.playSound("accept");
       return;
     }
 
+    // Limpiar loop anterior
     if (this.gameLoopTimeout) {
       clearTimeout(this.gameLoopTimeout);
     }
 
+    // Establecer nuevo nivel
     this.nivelActual = nuevoNivel;
 
     // Cambiar mapa
@@ -388,16 +399,21 @@ class SnakeGame {
 
     this.configurarNivel();
     this.ajustarVelocidad();
+
+    // Resetear cosas
     this.score = 0;
     this.reiniciarPlayer();
     this.apple = this.spawnApple();
     this.gameOver = false;
     this.isPaused = false;
-    this.updateUI();
-    this.startBackgroundMusic(); // reanudar música al cambiar de nivel
-    this.loop();
-  }
 
+    // Actualizar UI y música
+    this.updateUI();
+    this.startBackgroundMusic();
+
+    // Volver al loop
+    this.loop();
+}
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
